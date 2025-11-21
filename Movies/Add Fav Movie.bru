@@ -1,0 +1,26 @@
+meta {
+  name: Add Fav Movie
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3000/movies
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "id": "3",
+    "title": "Pulp Fiction",
+    "director": "Quentin Tarantino",
+    "year": 1994,
+    "genre": "Crime"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

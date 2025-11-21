@@ -1,0 +1,27 @@
+meta {
+  name: Add data In Investment
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:3000/investments
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "id": "12",
+    "name": " Mutual Fund",
+    "type": "Mutual Fund",
+    "amount": 50,
+    "purchaseDate": "2025-10-15",
+    "currentValue": 500
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
