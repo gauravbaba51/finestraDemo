@@ -1,0 +1,25 @@
+.table {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin-top: 15px;
+    border: 2px solid black;
+  }
+  
+  .row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .header {
+    font-weight: bold;
+    background: #f0f0f0;
+    border-top: 2px solid #999;
+  }
+  
+  .row:hover {
+    background: #fafafa;
+  }
+  

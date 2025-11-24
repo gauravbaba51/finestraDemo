@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class Investmentservice {
 
-  private apiUrl = 'http://localhost:3000/movies';
+  private apiUrl = 'http://localhost:3000/investments';
 
   investment = signal<Investment[]>([]);
   // create readonly signal to get the total number of investments
