@@ -1,26 +1,25 @@
 <p>investment-list works!</p>
+<h1>Investments</h1>
 <button (click)="displayAllMyInvestments()">Show All Investments</button>
 
 <div class="table">
-    <!-- *ngIf="showInvestments"  -->
 
-  <!-- Table Header -->
   <div class="row header">
+    <div>Investment ID</div>
     <div>Investment Name</div>
     <div>Amount</div>
     <div>Category</div>
     <div>Date</div>
   </div>
 
-  <!-- Table Rows -->
-   @for(inv of allInvestmentList(); track $index){
-
-       <div class="row">
-           <div>{{ inv.name }}</div>
-           <div>{{ inv.amount }}</div>
-           <div>{{ inv.type }}</div>
-           <div>{{ inv.purchaseDate }}</div>
-        </div>
-    }
+  @for(inv of allInvestmentList(); track $index){
+  <div class="row">
+    <div>{{ inv.id }}</div>
+    <div>{{ inv.name }}</div>
+    <div>{{ inv.amount }}</div>
+    <div>{{ inv.type }}</div>
+    <div>{{ inv.purchaseDate }}</div>
+  </div>
+  }
 
 </div>

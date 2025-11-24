@@ -1,6 +1,7 @@
 import { Injectable, signal } from '@angular/core';
 import { Investment } from '../models/investment.model';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -20,4 +21,11 @@ export class Investmentservice {
       this.investment.set(data);
     });
   }
+
+
+  getInvestmentsById(id: number): Observable<Investment> {
+    return this.http.get<Investment>(`${this.apiUrl}/${id}`);
+  }
+
+
 }

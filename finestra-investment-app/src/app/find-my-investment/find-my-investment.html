@@ -1,0 +1,33 @@
+<p>find-my-investment works!</p>
+<!-- <input type="number" value="id()" (input)="onIdInput($event)" /> -->
+
+<div class="card">
+    <h2>Find Investment by ID (signals)</h2>
+    <div class="form-row">
+        <label for="investmentId">Investment ID </label>
+        <input type="number" id="investmentId" [value]="id() ?? ''" (input)="onIdInput($event)"
+            placeholder="Enter ID (e.g 5)" />
+        <button (click)="onbtnInput(id())" >Find Investment</button>
+    </div>
+
+    @if(loading()){
+    <div class="info">Loading . . . </div>
+    }
+
+    @if(error()){
+    <div class="error">Error: {{ error() }}</div>
+    }
+
+    @if(investment()){
+    <div class="result">
+        <h3>{{investment()!.name}}</h3>
+        <ul>
+            @for(field of fields(); track $index){
+            <li><strong>{{ field.label}} : </strong> {{field.value}}</li>
+            }
+        </ul>
+    </div>
+    } @else {
+    <div class="info">Enter an ID to view the Investment. </div>
+    }
+</div>
