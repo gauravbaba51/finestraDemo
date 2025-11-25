@@ -7,7 +7,7 @@
         <label for="investmentId">Investment ID </label>
         <input type="number" id="investmentId" [value]="id() ?? ''" (input)="onIdInput($event)"
             placeholder="Enter ID (e.g 5)" />
-        <button (click)="onbtnInput(id())" >Find Investment</button>
+        <button (click)="onbtnInput(id())" [disabled]="btnId == null || btnId == 0">Find Investment</button>
     </div>
 
     @if(loading()){
