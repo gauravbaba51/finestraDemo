@@ -86,4 +86,12 @@ export class FindMyInvestment {
     this.id.set(this.btnId);
     console.log("onIdInput: ", this.id());
   }
+
+  clearInvestment(id:any):void {
+    console.log("Deleting investment with id:", id);  
+    this.svc.deleteInvestment(id).subscribe((response) => {
+      console.log('Investment deleted successfully:', response);
+      this.id.set(null);
+    })
+  }
 }

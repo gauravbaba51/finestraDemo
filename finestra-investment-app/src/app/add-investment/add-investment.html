@@ -1,0 +1,21 @@
+<p>add-investment works!</p>
+
+<h2>ADD Investment Details</h2>
+
+<form >
+    <label for="fname">Investment name:</label><br>
+    <input type="text" id="fname" name="fname" [(ngModel)]="addInvestment.name"><br><br>
+    <label for="cars">Investment Type</label>&nbsp;&nbsp;
+    <select [(ngModel)]="addInvestment.type" id="cars" name="cars">
+        <option value="Equity">Equity </option>
+        <option value="Debt">Debt</option>
+        <option value="Mutual Fund">Mutual Fund</option>
+    </select><br><br>
+    <label for="amount">Amount</label><br>
+    <input type="number" id="amount" name="amont" [(ngModel)]="addInvestment.amount"><br><br>
+    <label for="purchaseDate">Purchase Date</label>
+    <input type="date" id="purchaseDate" name="purchaseDate" [(ngModel)]="addInvestment.purchaseDate"><br><br>
+    <label for="currentValue">Current Value</label><br>
+    <input type="number" id="currentValue" name="currentValue" [(ngModel)]="addInvestment.currentValue"><br><br>
+    <input type="submit"  (click)="onDropdownChange()" >
+</form>

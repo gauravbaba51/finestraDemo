@@ -1,0 +1,79 @@
+<h2>Add Fresh Investment</h2>
+
+<nav style="margin-bottom: 1rem;">
+    <a routerLink="/investmentlist">back to Investment list </a>
+</nav>
+
+<form [formGroup]="investmentForm" (ngSubmit)="onSubmit()" novalidate class="form">
+    <div class="row">
+        <label for="id"> ID:</label>
+        <input id="id" formControlName="id" type="text" />
+        @if(f.id.touched && f.id.hasError('required')){
+        <small="error">ID is required.</small>
+            }
+            @if(f.id.touched && f.id.hasError('min')){
+            <small class="error">id must be greater than 0</small>
+            }
+    </div>
+    <div>
+        <label for="name">Investment Name:</label>
+        <input id="name" formControlName="name" type="text" />
+        @if(f.name.touched && f.name.hasError('required')){
+        <small class="error"> name is required.</small>
+        }
+        @if(f.name.touched && f.name.hasError('minlength')){
+        <small class="error">name must be at least 2 characters long.</small>
+        }
+    </div>
+    <div>
+        <label for="type">Investment Type:</label>
+        <select id="type" formControlName="type">
+            <option value="Equity">Equity</option>
+            <option value="Debt">Debt</option>
+            <option value="Mutual Fund">Mutual Fund</option>
+        </select>
+        @if(f.type.touched && f.type.hasError('required')){
+        <small class="error">type is required.</small>
+        }
+    </div>
+    <div>
+        <label for="amount">Investment Amount:</label>
+        <input id="amount" formControlName="amount" type="number" />
+        @if(f.amount.touched && f.amount.hasError('required')){
+        <small class="error">amount is required.</small>
+        }
+        @if(f.amount.touched && f.amount.hasError('min')){
+        <small class="error">amount must be greater than 0.</small>
+        }
+    </div>
+
+    <div class="row">
+        <label for="purchaseDate">Purchase Date:</label>
+        <input id="purchaseDate" formControlName="purchaseDate" type="string" />
+        @if(f.purchaseDate.touched && f.purchaseDate.hasError('required')){
+        <small class="error">purchaseDate is required.</small>
+        }
+    </div>
+
+    <div>
+        <label for="currentValue">Current Value:</label>
+        <input id="currentValue" formControlName="currentValue" type="number" />
+        @if(f.currentValue.touched && f.currentValue.hasError('required')){
+        <small class="error">currentValue is required.</small>
+        }
+    </div>
+
+    <div class="action">
+        <button type="submit" [disabled]="isSubmitting() || investmentForm.invalid">
+            {{isSubmitting() ? 'Saving...' : 'Add Investment'}}
+        </button>
+    </div>
+    <!-- <button type="submit" [disabled]="investmentForm.invalid">Add Investment</button> -->
+
+    @if(successMessage()){
+    <p class="success">{{ successMessage() }}</p>
+    }
+
+    @if(serverError()){
+    <p class="error">{{ serverError() }}</p>
+    }

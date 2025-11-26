@@ -1,6 +1,24 @@
-
 <h1>Demo App For Finestra</h1>
-<app-find-my-investment></app-find-my-investment>
-<app-investment-list></app-investment-list>
 
+<!-- <app-find-my-investment></app-find-my-investment>
+<app-investment-list></app-investment-list> -->
+<nav class="menu">
+    <ul>
+        <li>
+            <a routerLink="/investmentlist">View All My Investment </a>
+        </li>
+        <li>
+            <a routerLink="/findmyinvestment">Find and Fetch My Investment Details Basic on Investment Id </a>
+        </li>
+        <li>
+            <a routerLink="/">Find and Delete My Investment Details basis Investment Id </a>
+        </li>
+        <li>
+            <a routerLink="/modifyInvestment">Reactive Form ADD Investment Details </a>
+        </li>
+        <li>
+            <a routerLink="/addinvestment">ADD Investment Details </a>
+        </li>
+    </ul>
+</nav>
 <router-outlet />

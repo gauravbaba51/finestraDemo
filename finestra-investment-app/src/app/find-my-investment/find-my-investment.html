@@ -21,6 +21,9 @@
     @if(investment()){
     <div class="result">
         <h3>{{investment()!.name}}</h3>
+        <div>
+            <button name="DeleteButton" (click)="clearInvestment(investment()!.id)">Delete Investment</button>
+        </div>
         <ul>
             @for(field of fields(); track $index){
             <li><strong>{{ field.label}} : </strong> {{field.value}}</li>

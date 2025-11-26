@@ -1,5 +1,5 @@
 export interface Investment {
-  id: string;
+  id?:string;
   name: string;
   type: 'Equity' | 'Debt' | 'Mutual Fund';
   amount: number;
