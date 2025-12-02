@@ -11,10 +11,10 @@ import { Router } from '@angular/router';
 export class Login {
 
   private router = inject(Router)
-  userName=""
-  Pass=''
+  userName = ""
+  Pass = ''
 
-  login(){
+  login() {
     console.log("clicked buy user ")
     this.router.navigate(['/dashboard'])
   }

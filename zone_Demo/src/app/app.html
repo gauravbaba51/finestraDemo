@@ -1,0 +1,36 @@
+
+<h1>{{ title }}</h1>
+
+<div class="toolbar">
+  <button (click)="addProduct()">Add product</button>
+  <span class="status">Status: {{ status }}</span>
+</div>
+
+@if (loading) {
+  <p class="loading">Loading products…</p>
+} @else {
+  <section>
+    <h2>Products (@{{ products.length }})</h2>
+    <ul class="list">
+      @for (p of products; track p.id) {
+        <li class="item">
+          <div class="name">{{ p.name }}</div>
+          <div class="price">₹{{ p.price }}</div>
+          <div class="flags">
+            @if (p.active) {
+              <span class="badge active">Active</span>
+            } @else {
+              <span class="badge inactive">Inactive</span>
+            }
+          </div>
+          <button (click)="toggleActive(p)">@{{ p.active ? 'Deactivate' : 'Activate' }}</button>
+        </li>
+      } @empty {
+        <li class="item empty">No products</li>
+      }
+    </ul>
+    @if (lastUpdated) {
+      <p class="updated">Last updated: {{ lastUpdated }}</p>
+    }
+  </section>
+}

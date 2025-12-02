@@ -1,0 +1,80 @@
+
+:host {
+  display: block;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: 24px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.status {
+  color: #555;
+}
+
+.loading {
+  color: #888;
+  font-style: italic;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 1fr 120px 160px 140px;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.item.empty {
+  text-align: center;
+  color: #999;
+}
+
+.name {
+  font-weight: 600;
+}
+
+.price {
+  color: #1a73e8;
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.badge.active {
+  background: #e6ffed;
+  color: #0f7b0f;
+  border: 1px solid #b8f5c0;
+}
+
+.badge.inactive {
+  background: #fff3f0;
+  color: #b33a18;
+  border: 1px solid #ffd2c6;
+}
+
+.updated {
+  margin-top: 12px;
+  color: #666;
+}
