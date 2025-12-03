@@ -1,3 +1,8 @@
+# ssr project Clone URl
+
+https://github.com/ganatan
+
+
 Create a directory with the following naming format in C:\
 	md <yourname>_finastra_demoapi
 	md santosh_finastra_demoapi
